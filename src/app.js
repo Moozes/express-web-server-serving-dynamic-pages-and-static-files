@@ -16,6 +16,8 @@ const port = process.env.PORT || 3001
 
 
 // serving static files
+// this will add 2 routes to your server /index.html and /main.js 
+// and app.get('', ...) will return index.html and will not execute the app.get('', ...) defined below 
 app.use(express.static(staticFilesPath))
 
 // which engine to use
