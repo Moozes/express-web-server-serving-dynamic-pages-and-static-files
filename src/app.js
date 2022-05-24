@@ -10,14 +10,22 @@ const partialsPath = path.join(__dirname, '../templates/partials')
 
 
 const app = express()
-const port = process.env.PORT || 3000
+// a port from the environment or 3001
+// the port from environment is used when hosting on heroku
+const port = process.env.PORT || 3001
 
+
+// serving static files
 app.use(express.static(staticFilesPath))
 
+// which engine to use
 app.set('view engine', 'hbs')
+// customising the default views path
 app.set('views', viewsPath)
+// teling the engine where to find partial views
 hbs.registerPartials(partialsPath)
 
+// serving dynamic index.hbs file and providing a name variable to it
 app.get('', (req, res) => {
     res.render('index', {
         name: "moussa"
@@ -44,6 +52,7 @@ app.get('/weather', (req, res) => {
     })
 })
 
+// a 404 page if any other url requested
 app.get('*', (req, res) => {
     res.render('404', {
         title: "4O4 Not Found!",

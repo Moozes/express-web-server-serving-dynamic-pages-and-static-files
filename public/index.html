@@ -1,0 +1,8 @@
+this is an index page, but this is static
+<br>
+to execute the root route remove this index.html from the public static files folder<br>
+app.get('', (req, res) => {
+    res.render('index', {
+        name: "moussa"
+    })
+})
