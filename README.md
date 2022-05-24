@@ -9,3 +9,6 @@
   
   ### Frontend
     ####change (base url) any call to your backend from localhost:3000/ to http://heroku-url:port/
+    
+## static files
+  ### static files are served from root url, so if you want style.css inside index.hbs: <link rel="stylesheet" href="/style.css">
